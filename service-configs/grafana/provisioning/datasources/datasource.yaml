@@ -38,8 +38,12 @@ datasources:
     jsonData:
       derivedFields:
         - datasourceUid: tempo
-          matcherRegex: \"trace_id\":\"(\w+)\"
+          matcherRegex: \"trace_id\":\s*\"(\w+)\"
           name: TraceID
+          url: $${__value.raw}
+        - datasourceUid: tempo
+          matcherRegex: \"span_id\":\s*\"(\w+)\"
+          name: SpanID
           url: $${__value.raw}
   - name: prometheus
     type: prometheus

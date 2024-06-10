@@ -11,3 +11,4 @@ erl_crash.dump
 /data/prometheus-data
 /data/tempo-data
 /data/loki-data
+/service-configs/redis_ui
